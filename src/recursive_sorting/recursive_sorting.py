@@ -9,22 +9,22 @@ def merge(arrA, arrB):
     b = 0
 
     for k in range(0, elements):
-        # if pos in arrA is out of the bounds of arrA, set the current
+        # if pos in arrA is out of the bounds of arrA, set the current 
         # position in merged_arr to arrB[b] and increment pos in arrB
         if a >= len(arrA):
             merged_arr[k] = arrB[b]
             b += 1
-        # if pos in arrB is out of the bounds of arrB, set the current
+        # if pos in arrB is out of the bounds of arrB, set the current 
         # position in merged_arr to arrA[a] and increment pos in arrA
         elif b >= len(arrB):
             merged_arr[k] = arrA[a]
             a += 1
-        # if the current value of arrA is less than that of arrB, set the current
+        # if the current value of arrA is less than that of arrB, set the current 
         # position in merged_arr to arrA[a] and increment pos in arrA
         elif arrA[a] < arrB[b]:
             merged_arr[k] = arrA[a]
             a += 1
-        # if the current value of arrA is greater than that of arrB, set the current
+        # if the current value of arrA is greater than that of arrB, set the current 
         # position in merged_arr to arrB[b] and increment pos in arrB
         elif arrA[a] > arrB[b]:
             merged_arr[k] = arrB[b]
@@ -48,23 +48,23 @@ def merge_sort(arr):
 # implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     start2 = mid + 1
-
-    if (arr[mid] <= arr[start2]):
+  
+    if (arr[mid] <= arr[start2]): 
         return
-    while (start <= mid and start2 <= end):
+    while (start <= mid and start2 <= end): 
 
-        if (arr[start] <= arr[start2]):
+        if (arr[start] <= arr[start2]): 
             start += 1
-        else:
+        else: 
             value = arr[start2]
             index = start2
-
-            while (index != start):
+  
+            while (index != start): 
                 arr[index] = arr[index - 1]
                 index -= 1
-
-            arr[start] = value
-
+              
+            arr[start] = value 
+  
             start += 1
             mid += 1
             start2 += 1
@@ -72,14 +72,14 @@ def merge_in_place(arr, start, mid, end):
 
 
 def merge_sort_in_place(arr, l, r):
-    if (l < r):
+    if (l < r): 
         m = l + (r - l) // 2
-
+  
         merge_sort_in_place(arr, l, m)
         merge_sort_in_place(arr, m + 1, r)
-
+  
         merge_in_place(arr, l, m, r)
-
+        
     return arr
 
 
